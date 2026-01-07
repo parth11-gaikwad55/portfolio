@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Parth Govind Gaikwad | Portfolio</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+:root{
+
+  --primary:#00f5ff;
+
+  --secondary:#ff2cdf;
+
+  --dark:#040414;
+
+  --glass:rgba(255,255,255,0.12);
+
+}
+
+*{
+
+  margin:0;
+
+  padding:0;
+
+  box-sizing:border-box;
+
+  font-family:'Segoe UI',sans-serif;
+
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+
+  background:linear-gradient(120deg,#050b2e,#020014,#120020);
+
+  color:white;
+
+  overflow-x:hidden;
+
+}
+
+/* ===== FLOATING GRAPHICS ===== */
+
+.blob{
+
+  position:absolute;
+
+  width:300px;
+
+  height:300px;
+
+  background:radial-gradient(circle,var(--primary),transparent 70%);
+
+  filter:blur(80px);
+
+  opacity:0.6;
+
+  animation:float 8s infinite alternate;
+
+}
+
+.blob2{
+
+  background:radial-gradient(circle,var(--secondary),transparent 70%);
+
+  right:0;
+
+  animation-delay:2s;
+
+}
+
+@keyframes float{
+
+  from{transform:translateY(0);}
+
+  to{transform:translateY(-80px);}
+
+}
+
+/* ===== NAV ===== */
+
+nav{
+
+  position:sticky;
+
+  top:0;
+
+  background:rgba(0,0,0,0.6);
+
+  backdrop-filter:blur(12px);
+
+  padding:14px 0;
+
+  z-index:1000;
+
+}
+
+nav ul{
+
+  list-style:none;
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:25px;
+
+}
+
+nav a{
+
+  color:white;
+
+  text-decoration:none;
+
+  font-size:0.9rem;
+
+  letter-spacing:1px;
+
+  opacity:0.8;
+
+}
+
+nav a:hover{
+
+  color:var(--primary);
+
+  opacity:1;
+
+}
+
+/* ===== SECTIONS ===== */
+
+section{
+
+  padding:90px 8%;
+
+  position:relative;
+
+}
+
+h1{
+
+  font-size:3rem;
+
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+
+  -webkit-background-clip:text;
+
+  color:transparent;
+
+}
+
+h2{
+
+  font-size:2.2rem;
+
+  margin-bottom:30px;
+
+  text-align:center;
+
+}
+
+/* ===== HERO ===== */
+
+.hero{
+
+  min-height:100vh;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+
+}
+
+.profile-wrapper{
+
+  position:relative;
+
+}
+
+.profile-pic{
+
+  width:190px;
+
+  height:190px;
+
+  border-radius:50%;
+
+  object-fit:cover;
+
+  border:4px solid var(--primary);
+
+  box-shadow:0 0 35px var(--primary);
+
+}
+
+.profile-wrapper::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-12px;
+
+  border-radius:50%;
+
+  border:2px dashed var(--secondary);
+
+  animation:spin 10s linear infinite;
+
+}
+
+@keyframes spin{
+
+  to{transform:rotate(360deg);}
+
+}
+
+.hero p{
+
+  margin-top:12px;
+
+  font-size:1.1rem;
+
+  opacity:0.85;
+
+}
+
+.hero button{
+
+  margin-top:28px;
+
+  padding:14px 36px;
+
+  border:none;
+
+  border-radius:40px;
+
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  box-shadow:0 0 25px var(--primary);
+
+  transition:0.3s;
+
+}
+
+.hero button:hover{
+
+  transform:scale(1.08);
+
+}
+
+/* ===== CARDS ===== */
+
+.grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+  gap:25px;
+
+}
+
+.card{
+
+  background:var(--glass);
+
+  backdrop-filter:blur(18px);
+
+  border-radius:18px;
+
+  padding:25px;
+
+  box-shadow:0 0 30px rgba(0,0,0,0.7);
+
+  transition:0.4s;
+
+}
+
+.card:hover{
+
+  transform:translateY(-10px) scale(1.03);
+
+  box-shadow:0 0 45px var(--primary);
+
+}
+
+/* ===== SKILLS ===== */
+
+.skill{
+
+  margin-bottom:18px;
+
+}
+
+.bar{
+
+  height:10px;
+
+  background:#222;
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+}
+
+.fill{
+
+  height:100%;
+
+  width:0;
+
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+
+  animation:load 2s forwards;
+
+}
+
+@keyframes load{
+
+  to{width:var(--w);}
+
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+
+  text-align:center;
+
+  padding:25px;
+
+  font-size:0.8rem;
+
+  opacity:0.6;
+
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:600px){
+
+  h1{font-size:2.3rem;}
+
+  h2{font-size:1.8rem;}
+
+  .profile-pic{width:150px;height:150px;}
+  
+  .profile-wrapper::after{
+
+  display:none;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="blob"></div>
+
+<div class="blob blob2"></div>
+
+<nav>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#skills">Skills</a></li>
+
+<li><a href="#projects">Projects</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero" id="home">
+
+<div>
+
+<div class="profile-wrapper">
+
+<img src="https://iili.io/fOs6Xl1.md.jpg" alt="Parth Govind Gaikwad" class="profile-pic">
+
+</div>
+
+<h1>Parth Govind Gaikwad</h1>
+
+<p>Innovator • Robotics • Web Developer</p>
+
+<button onclick="document.getElementById('about').scrollIntoView()">Explore Portfolio</button>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<div class="grid">
+
+<div class="card">
+
+I am a passionate student innovator with strong interest in robotics, Arduino and modern web technologies. I love creating futuristic solutions for real-world problems.
+
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2>Skills</h2>
+
+<div class="card">
+
+<div class="skill">HTML<div class="bar"><div class="fill" style="--w:90%"></div></div></div>
+
+<div class="skill">CSS<div class="bar"><div class="fill" style="--w:85%"></div></div></div>
+
+<div class="skill">JavaScript<div class="bar"><div class="fill" style="--w:75%"></div></div></div>
+
+<div class="skill">Robotics & Arduino<div class="bar"><div class="fill" style="--w:80%"></div></div></div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2>Projects</h2>
+
+<div class="grid">
+
+<div class="card">🌾 <b>Agri-Robot</b><p>Smart agricultural automation robot.</p></div>
+
+<div class="card">🔥 <b>Fire-Fighting Robot</b><p>Autonomous fire detection system.</p></div>
+
+<div class="card">🪖 <b>Military Robot</b><p>Surveillance and defence robot.</p></div>
+
+<div class="card">📱 <b>QR Voting Website</b><p>Secure QR-based election platform.</p></div>
+
+</div>
+<br><br>
+<p>For more details of project contact:
+parthgaikwad1822011@gmail.com</p>
+
+</section>
+
+<footer>
+
+© 2026 Parth Govind Gaikwad 
+
+</footer>
+
+</body>
+
+</html>
